@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- modalFranquia - Modal para parecer o form contato Franquia, assim que abrir a pagina -->
+    <div class="modalFormFranquia modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="Franquia">
+        <div class="modal-dialog modal-sm"  role="document">
+            <div class="modal-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="text-center">
+                            <h3 style="color:blue; font-weight:bold">Baixe nossa apresentação e seja um franqueado!</h3>
+                        </div>
+                    </div>
+                    
+                    <form action="https://formspree.io/seuemail@email.com" method="POST" id="formModalFranquia">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">Nome</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>    
+                                        </div>
+                                        <input type="text" class="form-control inputNome" placeholder="Nome">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">Email</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>    
+                                        </div>
+                                        <input type="email" name="_replyto" class="form-control inputEmail" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">Telefone ou celular</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>    
+                                        </div>
+                                        <input type="tel" class="form-control inputTel" name="telefone" placeholder="Telefone ou Celular">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">UF</label>
+                                    <select class="form-control selectUf" name="UF">
+                                        <option value="">UF</option>
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">UF</label>
+                                    <select class="form-control selectEstado" name="Estado">
+                                        <option value="">Escolha um estado</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">Quanto espera investir?</label>
+                                    <select class="form-control selectInvestimento" name="Investimento">
+                                        <option value="">Quanto espera investir?</option>
+                                        <option>R$50</option>
+                                        <option>R$100</option>
+                                        <option>R$150</option>
+                                        <option>R$200</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-success btn-lg btn-block botaoCadastro">Enviar</span></button>
+                                <a href="google.com">
+                                    <button type="button" class="btn btn-danger btn-lg btn-block botaoApresentacao hidden">BAIXAR APRESENTAÇÃO! <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="text-center">
+                                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                                <span>SITE 100% SEGURO E LIVRE DE SPAM</span>
+                            </div>
+                        </div>
+                        
+
+                      
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- fim modalFranquia -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.selectUf').on('change',function(){
+                let valor = this.value;
+                $('.selectEstado').val(valor);
+            });
+
+            $('.selectEstado').on('change',function(){
+                let valor = this.value;
+                $('.selectUf').val(valor);
+            });
+
+            setTimeout(function(){ 
+                $('.modalFormFranquia').modal('show') 
+            }, 1000);
+
+            $('#formModalFranquia').on('submit',function(event){
+                event.preventDefault();
+
+                let data = {
+                    Nome: $(".inputNome").val(),
+                    Email: $('.inputEmail').val(), 
+                    Telefone: $('.inputTel').val(),
+                    UF: $('.selectUf').val(),
+                    Estado: $('.selectEstado').val(),
+                    Investimento: $('.selectInvestimento').val()
+                }
+                $.ajax({
+                    url: "https://formspree.io/seuemail@email.com",
+                    method: "POST",
+                    data,
+                    dataType: "json"
+                }).done(function(result){
+                    $('.botaoCadastro').fadeOut(function(){
+                        $('.botaoApresentacao').removeClass('hidden').fadeIn('slow');
+                    });
+                    
+                }).fail(function() {
+            	    console.log('Erro ao enviar os dados');
+                    
+                })
+                .always(function() {
+                    //console.log("complete");
+                });                             
+
+            })
+
+        })
+    </script>
+
+</body>
+</html>
