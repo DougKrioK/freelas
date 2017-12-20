@@ -8,10 +8,59 @@
     <title>Document</title>
 </head>
 <body>
-
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
+    <h1>teste</h1>
     <!-- modalFranquia - Modal para parecer o form contato Franquia, assim que abrir a pagina -->
-    <div class="modalFormFranquia modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="Franquia">
-        <div class="modal-dialog modal-sm"  role="document">
+    <div class="modalFormFranquia modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="Franquia" data-backdrop="false">
+        <div class="modal-dialog modal-sm"  role="document" id="modal-franquia">
             <div class="modal-content">
                 <div class="container-fluid">
                     <div class="row">
@@ -103,35 +152,8 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label class="sr-only" for="exampleInputAmount">UF</label>
-                                    <select class="form-control selectEstado" name="Estado">
-                                        <option value="">Escolha um estado</option>
-                                        <option value="AC">Acre</option>
-                                        <option value="AL">Alagoas</option>
-                                        <option value="AP">Amapá</option>
-                                        <option value="AM">Amazonas</option>
-                                        <option value="BA">Bahia</option>
-                                        <option value="CE">Ceará</option>
-                                        <option value="DF">Distrito Federal</option>
-                                        <option value="ES">Espírito Santo</option>
-                                        <option value="GO">Goiás</option>
-                                        <option value="MA">Maranhão</option>
-                                        <option value="MT">Mato Grosso</option>
-                                        <option value="MS">Mato Grosso do Sul</option>
-                                        <option value="MG">Minas Gerais</option>
-                                        <option value="PA">Pará</option>
-                                        <option value="PB">Paraíba</option>
-                                        <option value="PR">Paraná</option>
-                                        <option value="PE">Pernambuco</option>
-                                        <option value="PI">Piauí</option>
-                                        <option value="RJ">Rio de Janeiro</option>
-                                        <option value="RN">Rio Grande do Norte</option>
-                                        <option value="RS">Rio Grande do Sul</option>
-                                        <option value="RO">Rondônia</option>
-                                        <option value="RR">Roraima</option>
-                                        <option value="SC">Santa Catarina</option>
-                                        <option value="SP">São Paulo</option>
-                                        <option value="SE">Sergipe</option>
-                                        <option value="TO">Tocantins</option>
+                                    <select class="form-control selectCidade" id="select_cidade" name="Estado">
+                                        <!--preencho as cidades de acordo com o estado -->
                                     </select>
                                 </div>
                             </div>
@@ -143,10 +165,11 @@
                                     <label class="sr-only" for="exampleInputAmount">Quanto espera investir?</label>
                                     <select class="form-control selectInvestimento" name="Investimento">
                                         <option value="">Quanto espera investir?</option>
-                                        <option>R$50</option>
-                                        <option>R$100</option>
-                                        <option>R$150</option>
-                                        <option>R$200</option>
+                                        <option>Até 50.000</option>
+                                        <option>Até 100.000</option>
+                                        <option>Até 150.000</option>
+                                        <option>Até 200.000</option>
+                                        <option>Acima de 200.000</option>
                                     </select>
                                 </div>
                             </div>
@@ -179,21 +202,40 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/cidade-estados-brasil.min.js"></script>
 
     <script>
         $(document).ready(function(){
+
             $('.selectUf').on('change',function(){
                 let valor = this.value;
-                $('.selectEstado').val(valor);
-            });
 
-            $('.selectEstado').on('change',function(){
-                let valor = this.value;
-                $('.selectUf').val(valor);
+                new statesCitiesBR({
+                    cities: {
+                        elementID: "select_cidade",
+                        state: valor,
+                        defaultOption: "Cidade"
+                    }
+                });
             });
 
             setTimeout(function(){ 
-                $('.modalFormFranquia').modal('show') 
+
+                //se a tela for menor q 768, mostro o modal a direita
+                let tamanhoViewport = $(window).width();
+                if (tamanhoViewport > 768) {
+                    //se quiser alterar a distancia de margen, é só alterar o margin-right e top.
+                    $('.modal-dialog').css({
+                        'margin-right':'30px',
+                        'margin-top':'50px'
+                    })
+                }
+
+                
+                $('.modalFormFranquia').modal('show');
+
+                //removo a opção de fechar o modal ao clicar fora
+                $('body').removeClass('modal-open'); 
             }, 1000);
 
             $('#formModalFranquia').on('submit',function(event){
