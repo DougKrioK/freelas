@@ -59,7 +59,7 @@
     <h1>teste</h1>
     <h1>teste</h1>
     <!-- modalFranquia - Modal para parecer o form contato Franquia, assim que abrir a pagina -->
-    <div class="modalFormFranquia modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="Franquia" data-backdrop="false">
+    <div class="modalFormFranquia modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="Franquia" data-backdrop="true">
         <div class="modal-dialog modal-sm"  role="document" id="modal-franquia">
             <div class="modal-content">
                 <div class="container-fluid">
@@ -117,7 +117,7 @@
                                 <div class="form-group">
                                     <label class="sr-only" for="exampleInputAmount">UF</label>
                                     <select class="form-control selectUf" name="UF">
-                                        <option value="">UF</option>
+                                        <option value="" selected>UF</option>
                                         <option value="AC">AC</option>
                                         <option value="AL">AL</option>
                                         <option value="AP">AP</option>
@@ -153,6 +153,7 @@
                                 <div class="form-group">
                                     <label class="sr-only" for="exampleInputAmount">UF</label>
                                     <select class="form-control selectCidade" id="select_cidade" name="Estado">
+                                        <option value="">Escolha a UF</option>
                                         <!--preencho as cidades de acordo com o estado -->
                                     </select>
                                 </div>
@@ -224,6 +225,8 @@
                 //se a tela for menor q 768, mostro o modal a direita
                 let tamanhoViewport = $(window).width();
                 if (tamanhoViewport > 768) {
+                    //removendo o click fora do modal, se for maior q 768
+                    $(".modalFormFranquia").attr('data-backdrop',false);
                     //se quiser alterar a distancia de margen, é só alterar o margin-right e top.
                     $('.modal-dialog').css({
                         'margin-right':'30px',
@@ -246,7 +249,7 @@
                     Email: $('.inputEmail').val(), 
                     Telefone: $('.inputTel').val(),
                     UF: $('.selectUf').val(),
-                    Estado: $('.selectEstado').val(),
+                    Cidade: $('.selectCidade').val(),
                     Investimento: $('.selectInvestimento').val()
                 }
                 $.ajax({
